@@ -1,0 +1,55 @@
+# .gitignore
+
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+*.pyo
+*.pyc
+
+# Logs
+logs/
+
+# Environment variable files
+.env
+
+# IDE-related files
+.vscode/
+.idea/
+
+# Compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Dependency folders
+venv/
+env/
+dist/
+build/
+*.egg-info/
+
+# Distribution/installation files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Miscellaneous
+*.log
+*.swp
+*.db
+*.sqlite3
+*.DS_Store
+
+# Ignore system-specific files
+Thumbs.db
+desktop.ini
