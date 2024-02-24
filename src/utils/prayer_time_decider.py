@@ -2,10 +2,10 @@
 from enum import Enum
 import os
 from dotenv import load_dotenv
-from src.utils.logger import log  # Import the log function
-from src.utils.sahat_kula import SahatKula
-from src.prayer_times_sources.aziz import Aziz
-from src.prayer_times_sources.ebu_suud import EbuSuud
+from utils.logger import log  # Import the log function
+from utils.sahat_kula import SahatKula
+from prayer_times_sources.aziz import Aziz
+from prayer_times_sources.ebu_suud import EbuSuud
 import datetime
 
 class PRAYER_TIME(Enum):

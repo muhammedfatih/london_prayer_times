@@ -4,12 +4,12 @@ import time
 from datetime import datetime
 
 def main():
-    from src.utils.abdul_kerim import AbdulKerim
-    from src.prayer_times_sources.aziz import Aziz
-    from src.prayer_times_sources.ebu_suud import EbuSuud
-    from src.utils.sahat_kula import SahatKula
-    from src.utils.prayer_time_decider import PrayerTimeDecider
-    from src.utils.logger import log  # Import the log function
+    from utils.abdul_kerim import AbdulKerim
+    from prayer_times_sources.aziz import Aziz
+    from prayer_times_sources.ebu_suud import EbuSuud
+    from utils.sahat_kula import SahatKula
+    from utils.prayer_time_decider import PrayerTimeDecider
+    from utils.logger import log  # Import the log function
     log(f"Application is started.")
     
     log(f"Application is starting Aziz.")

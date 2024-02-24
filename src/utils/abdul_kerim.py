@@ -1,28 +1,33 @@
 # src/utils/abdul_kerim.py
-from selenium.webdriver.common.by import By
+from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 import time
 from enum import Enum
 import os
 from dotenv import load_dotenv
-from src.utils.logger import log  # Import the log function
+from utils.logger import log  # Import the log function
 
 class AbdulKerim:
-    def __init__(self, driver):
-        self.driver = driver
+    def __init__(self):
         log("AbdulKerim is ready to serve!")
         load_dotenv()
 
         # Use the getenv function to retrieve the values
+        self.chromedriver = os.getenv("CHROMEDRIVER")
         self.spotify_username = os.getenv("SPOTIFY_USERNAME")
         self.spotify_password = os.getenv("SPOTIFY_PASSWORD")
         self.main_device_name = os.getenv("MAIN_DEVICE_NAME")
         self.tahajjud_device_name = os.getenv("TAHAJJUD_DEVICE_NAME")
         log("AbdulKerim read system variables from .env file.")
+        log(f"AbdulKerim knows CHROMEDRIVER is {self.chromedriver}")
         log(f"AbdulKerim knows SPOTIFY_USERNAME is {self.spotify_username}")
         log(f"AbdulKerim knows MAIN_DEVICE_NAME is {self.main_device_name}")
         log(f"AbdulKerim knows TAHAJJUD_DEVICE_NAME is {self.tahajjud_device_name}")
+        self.driver = webdriver.Chrome(self.chromedriver)
 
     def login(self):
         self.driver.get("https://accounts.spotify.com/en/login?continue=https%3A%2F%2Fopen.spotify.com%2F%3Fflow_ctx%3D66da0c01-0012-4684-a22a-644eb3444108%253A1701134009")
@@ -38,7 +43,7 @@ class AbdulKerim:
         time.sleep(5)
 
     def play(self, playlist_url, device_name):
-        from src.main import PLAYLISTS
+        from utils.prayer_time_decider import PLAYLISTS
         self.driver.get(playlist_url)
         log(f"AbdulKerim is playing the playlist at the URL: {playlist_url}.")
         time.sleep(5)

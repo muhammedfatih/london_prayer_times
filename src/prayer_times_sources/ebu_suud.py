@@ -1,7 +1,7 @@
 # src/prayer_times_sources/ebu_suud.py
 import requests
 import re
-from src.utils.logger import log  # Import the log function
+from utils.logger import log  # Import the log function
 
 class EbuSuud:
     def __init__(self):

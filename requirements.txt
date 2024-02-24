@@ -3,4 +3,5 @@ requests==2.25.1
 urllib3==1.26.7
 chardet==4.0.0
 charset_normalizer==2.0.12
+selenium==4.1.0
 python-dotenv==0.19.0

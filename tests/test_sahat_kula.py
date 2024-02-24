@@ -1,6 +1,6 @@
 import unittest
 from datetime import datetime, timedelta
-from src.utils.sahat_kula import SahatKula
+from utils.sahat_kula import SahatKula
 
 class TestSahatKula(unittest.TestCase):
 

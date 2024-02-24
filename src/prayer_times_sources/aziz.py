@@ -1,7 +1,7 @@
 # src/prayer_times_sources/aziz.py
 import requests
 from datetime import datetime
-from src.utils.logger import log  # Import the log function
+from utils.logger import log  # Import the log function
 
 class Aziz:
     def __init__(self):

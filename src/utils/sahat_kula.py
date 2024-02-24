@@ -1,6 +1,6 @@
 # src/utils/sahat_kula.py
 from datetime import datetime
-from src.utils.logger import log  # Import the log function
+from utils.logger import log  # Import the log function
 
 class SahatKula:
     def __init__(self):
