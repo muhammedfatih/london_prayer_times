@@ -44,6 +44,10 @@ cd london-prayer-times
 pip install -r requirements.txt
 ```
 
+3. Export current folder
+```
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+````
 
 ## Usage
 
