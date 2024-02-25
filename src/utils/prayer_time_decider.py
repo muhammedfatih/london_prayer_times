@@ -124,21 +124,24 @@ class PrayerTimeDecider:
         if index == PRAYER_TIME.FAJR.value:
             log(f"PrayerTimeDecider knows it is Fajr time!")
             return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.FAJR.value, self.main_device_name
+        elif index == PRAYER_TIME.SUNRISE.value:
+            log(f"PrayerTimeDecider knows it is Sunrise time!")
+            return self.sahatKula.compareTimes(times[0], now) == 0, PLAYLISTS.SHORT_SURAS.value, self.main_device_name
         elif index == PRAYER_TIME.DHUHR.value:
             log(f"PrayerTimeDecider knows it is Dhuhr time!")
-            return self.sahatKula.compareTimes(times[0], now) == 0, PLAYLISTS.DHUHR.value, self.main_device_name
+            return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.REGULAR.value, self.main_device_name
         elif index == PRAYER_TIME.ASR.value:
             log(f"PrayerTimeDecider knows it is Asr time!")
-            return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.ASR.value, self.main_device_name
+            return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.REGULAR.value, self.main_device_name
         elif index == PRAYER_TIME.MAGHRIB.value:
             log(f"PrayerTimeDecider knows it is Maghrib time!")
-            return self.sahatKula.compareTimes(times[0], now) == 0, PLAYLISTS.MAGHRIB.value, self.main_device_name
+            return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.MAGHRIB.value, self.main_device_name
         elif index == PRAYER_TIME.ISHA.value:
             log(f"PrayerTimeDecider knows it is Isha time!")
-            return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.ISHA.value, self.main_device_name
+            return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.REGULAR.value, self.main_device_name
         elif index == PRAYER_TIME.TAHAJJUD.value:
             log(f"PrayerTimeDecider knows it is Tahajjud time!")
-            return self.sahatKula.compareTimes(times[1], now) == 0, PLAYLISTS.TAHAJJUD.value, self.tahajjud_device_name
+            return True, PLAYLISTS.SHORT_SURAS.value, self.tahajjud_device_name
         else:
             log(f"PrayerTimeDecider is confused. It will return false, empty, and empty.")
             return False, '', ''
