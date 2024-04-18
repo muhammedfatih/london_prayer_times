@@ -10,24 +10,24 @@ from enum import Enum
 import os
 from dotenv import load_dotenv
 from utils.logger import log  # Import the log function
+import chromedriver_autoinstaller
 
 class AbdulKerim:
     def __init__(self):
+        chromedriver_autoinstaller.install()
         log("AbdulKerim is ready to serve!")
         load_dotenv()
 
         # Use the getenv function to retrieve the values
-        self.chromedriver = os.getenv("CHROMEDRIVER")
         self.spotify_username = os.getenv("SPOTIFY_USERNAME")
         self.spotify_password = os.getenv("SPOTIFY_PASSWORD")
         self.main_device_name = os.getenv("MAIN_DEVICE_NAME")
         self.tahajjud_device_name = os.getenv("TAHAJJUD_DEVICE_NAME")
         log("AbdulKerim read system variables from .env file.")
-        log(f"AbdulKerim knows CHROMEDRIVER is {self.chromedriver}")
         log(f"AbdulKerim knows SPOTIFY_USERNAME is {self.spotify_username}")
         log(f"AbdulKerim knows MAIN_DEVICE_NAME is {self.main_device_name}")
         log(f"AbdulKerim knows TAHAJJUD_DEVICE_NAME is {self.tahajjud_device_name}")
-        self.driver = webdriver.Chrome(self.chromedriver)
+        self.driver = webdriver.Chrome()
 
     def login(self):
         self.driver.get("https://accounts.spotify.com/en/login?continue=https%3A%2F%2Fopen.spotify.com%2F%3Fflow_ctx%3D66da0c01-0012-4684-a22a-644eb3444108%253A1701134009")
